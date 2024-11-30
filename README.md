@@ -1,3 +1,3 @@
 # tweak-frontend
 Branch name template:
-issue-<main branch name>-tweak-<issue_number>
+issue-<main_branch_name>-tweak-<issue_number>
