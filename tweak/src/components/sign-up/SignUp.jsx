@@ -25,7 +25,7 @@ function SignUp() {
       <button>go back</button>
       <h1>Welcome to Tweak</h1>
       <form onSubmit={handleSubmit}>
-      <label>
+        <label>
           Mobile Number
           <input
             type="tel"
@@ -36,6 +36,8 @@ function SignUp() {
             required
           />
         </label>
+
+        <button type="submit">Generate otp</button>
 
       </form>
     </div>
