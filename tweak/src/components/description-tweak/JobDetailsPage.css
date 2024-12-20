@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .job-details-container {
+    padding: 16px;
+    max-width: 600px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .category {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .description h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #444;
+  }
+  
+  .description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .details {
+    margin-top: 16px;
+    font-size: 1rem;
+  }
+  
+  .details .detail {
+    margin-bottom: 8px;
+  }
+  
+  .details strong {
+    color: #333;
+  }
+  
+  .actions {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .actions button {
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    transition: background-color 0.3s;
+  }
+  
+  .actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (min-width: 768px) {
+    .actions {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .actions button {
+      flex: 1;
+      margin: 0 4px;
+    }
+  }
+  
