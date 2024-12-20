@@ -8,6 +8,7 @@ import CreateTweak from './components/create-tweak/CreateTweak';
 import ListTweak from './components/list-tweak/ListTweak';
 import EachTweak from './components/list-tweak/EachTweak';
 import DescriptionTweak from './components/description-tweak/DesriptionTweak';
+import ApplicantList from './components/applicant-list-tweak/ApplicantList';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/list-tweak" element={<ListTweak/>}/>
         <Route path="/each-tweak" element={<EachTweak/>}/>
         <Route path="/description-tweak" element ={<DescriptionTweak/>}/>
+        <Route path="/applicant-list" element={<ApplicantList/>}/>
       </Routes>
     </div>
   );
