@@ -5,6 +5,8 @@ import Home from './components/home/Home';
 import LanguageSelection from './components/language-selection/LanguageSelection';
 import SignUp from './components/sign-up/SignUp';
 import CreateTweak from './components/create-tweak/CreateTweak';
+import ListTweak from './components/list-tweak/ListTweak';
+import EachTweak from './components/list-tweak/EachTweak';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/language-selection" element={<LanguageSelection />} />
         <Route path="/sign-up" element={<SignUp/>}/>
         <Route path="/create-tweak" element={<CreateTweak/>}/>
+        <Route path="/list-tweak" element={<ListTweak/>}/>
+        <Route path="/each-tweak" element={<EachTweak/>}/>
       </Routes>
     </div>
   );
