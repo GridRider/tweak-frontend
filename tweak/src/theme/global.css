@@ -8,17 +8,22 @@
     border-radius: var(--button-border-radius);
     cursor: pointer;
     color: #fff;
-    background-color: var(--primary-color);
+    background-color: var(--color1);
     transition: background-color 0.3s ease;
+    
   }
   
   button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--color2);
   }
   
   button:disabled {
-    background-color: var(--danger-color);
+    background-color: var(--color3d);
     cursor: not-allowed;
+  }
+
+  .pill-button{
+    border-radius: 25%;
   }
   
   .modal-overlay {

@@ -1,20 +1,31 @@
-/* theme.css */
 :root {
     /* Colors */
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --danger-color: #dc3545;
+    --color1: #3F41D9;
+    --color2: #6F3FD9;
+    --color3d:#a8b9da;
+    --color4:#3FA3D9;
+    --color5:#A13FD9;
+    --color6:#EDF7F6;
+    --color7:#FCCB06;
+    --colorbg:white;
+    --colors: #28a745;
+    --colord: #dc3545;
     
     /* Buttons */
-    --button-padding: 10px 20px;
-    --button-font-size: 16px;
-    --button-border-radius: 5px;
+    --button-padding: 8px 16px;
+    --button-font-size: 14px;
+    --button-border-radius: 30px;
     
     /* Modals */
     --modal-overlay-color: rgba(0, 0, 0, 0.5);
     --modal-background-color: #fff;
     --modal-padding: 20px;
     --modal-border-radius: 8px;
+
+    /*gradients*/
+    --gradient1: linear-gradient(45deg, var(--color1), var(--color2));
+    --gradient2: linear-gradient(90deg, var(--color3), var(--color4));
+    --gradient3: linear-gradient(180deg, var(--color5), var(--color7));
+    --gradient4: linear-gradient(to bottom, var(--color2), var(--color6));
   }
   
