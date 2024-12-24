@@ -1,0 +1,9 @@
+.lang{
+    text-align: center;
+}
+.lang-btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
