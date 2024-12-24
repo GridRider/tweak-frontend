@@ -34,12 +34,12 @@ const ProgressButton = ({ onClick,disabled=false,children }) => {
         color: "#fff",
         backgroundColor:
           state === "success"
-            ? "green"
+            ? "var(--colors)"
             : state === "failed"
-            ? "red"
+            ? "var(--colord)"
             : state === "loading"
-            ? "#007bff"
-            : "#007bff",
+            ? "var(--color1)"
+            : "var(--color1)",
         border: "none",
         borderRadius: "5px",
         cursor: state === "loading" ? "not-allowed" : "pointer",
