@@ -53,7 +53,7 @@ const OTPInput = ({ formData, updateFormData, onSubmit }) => {
         {otp.map((digit, index) => (
           <input
             key={index}
-            type="text"
+            type="number"
             maxLength="1"
             value={digit}
             onChange={(e) => handleChange(e.target.value, index)}

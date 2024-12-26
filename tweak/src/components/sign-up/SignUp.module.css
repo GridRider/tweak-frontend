@@ -1,11 +1,11 @@
 .welcome-txt{
-    margin: 10vh 0px 5vh 5%;
+    margin: 10vh 0px 5vh 0px;
     text-align: center;
     
 }
 
 .desc-txt{
-    margin: 0vh 0px 2vh 5%;
+    margin: 0vh 0px 2vh 0px;
     color:var(--text3);
     font-size: small;
     text-align: center;
