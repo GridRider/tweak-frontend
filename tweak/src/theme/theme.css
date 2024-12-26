@@ -10,6 +10,10 @@
     --colorbg:white;
     --colors: #28a745;
     --colord: #dc3545;
+    --color-shadow:rgba(0, 123, 255, 0.3);
+    --text1:black;
+    --text2:white;
+    --text3:grey;
     
     /* Buttons */
     --button-padding: 8px 16px;

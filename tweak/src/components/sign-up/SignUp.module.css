@@ -1,0 +1,52 @@
+.welcome-txt{
+    margin: 10vh 0px 5vh 5%;
+    text-align: center;
+    
+}
+
+.desc-txt{
+    margin: 0vh 0px 2vh 5%;
+    color:var(--text3);
+    font-size: small;
+    text-align: center;
+
+}
+.flexy-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.no-txt{
+    font-size: small;
+}
+.no-field{
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 4vh;
+    width: 80vw;
+    text-align: center;
+    font-size: large;
+} 
+.no-field:focus{
+  background: #fff;
+  border-color: var(--color1);
+  box-shadow: 0 0 8px  var(--color-shadow);
+  outline:none;
+}
+.no-field-err{
+    background: #fff;
+  border-color: var(--colord);
+  box-shadow: 0 0 8px  var(--colord);
+  outline:none;
+}
+.otp-btn{
+    width: 80vw;
+}
+.bold-text{
+    font-weight: bold;
+    color:var(--text1);
+}
+
+
