@@ -1,0 +1,37 @@
+.floating-label-field {
+    position: relative;
+    margin: 1em 0;
+  }
+  
+  .floating-label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #000000;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  
+  .floating-label.active {
+    top: 25%;
+    font-size: 0.60rem;
+    color: #000000;
+  }
+  
+  .floating-input {
+    width: 20%;
+    padding: 10px 10px 10px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    padding: 15px 10px 10px 10px; 
+    font-size: .90rem; 
+    line-height: 1.5; 
+    text-indent: 15px;  
+  }
+  
+  
+  
