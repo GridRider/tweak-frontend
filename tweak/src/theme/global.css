@@ -35,6 +35,13 @@
   .boxy-btn{
     border-radius: 10px;
   }
+
+  input:focus {
+    background:var(--colorbg);
+    border-color: var(--color1);
+    box-shadow: 0 0 8px  var(--color-shadow);
+    outline:none;
+  }
   
   .modal-overlay {
     position: fixed;
