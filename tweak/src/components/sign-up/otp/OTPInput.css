@@ -34,23 +34,25 @@
   outline:none;
 }
 
-/* .submit-button {
-  width: 100px;
-  height: 40px;
-  background-color: #ccc;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: not-allowed;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-} */
-
-/* .submit-button.active {
-  background-color: #4caf50;
-  cursor: pointer;
+.resend-btn{
+  padding: 0;
+  margin:0;
+  outline:none;
+  background-color: var(--colorbg);
+  color:var(--color1);
+  font-size: small;
 }
 
-.submit-button.active:hover {
-  background-color: #45a049;
-} */
+.resend-btn:hover{
+  outline:none;
+  background-color: var(--colorbg);
+  color:var(--color1);
+}
+
+.resend-timer{
+  color:var(--colord);
+}
+.resend-txt{
+  font-size: small;
+}
+

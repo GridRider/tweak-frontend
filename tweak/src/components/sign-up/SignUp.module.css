@@ -36,7 +36,7 @@
   outline:none;
 }
 .no-field-err{
-    background: #fff;
+  background: #fff;
   border-color: var(--colord);
   box-shadow: 0 0 8px  var(--colord);
   outline:none;
