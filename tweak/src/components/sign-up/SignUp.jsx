@@ -1,47 +1,61 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { FaChevronLeft } from 'react-icons/fa';
+import styles from "./SignUp.module.css";
+import PhoneForm from './PhoneForm'; // Import the new PhoneForm component
+import OTPInput from './otp/OTPInput';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
-
+  const [gotNumber, setGotNumber] = useState(false);
+  const navigate=useNavigate();
   const [formData, setFormData] = useState({
     phone: '',
   });
+  
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  const updateFormData = (data) => {
+    setFormData(data);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmitNum = () => {
     console.log('Form submitted:', formData);
-    alert('Form submitted successfully!');
+    setGotNumber(true);
   };
-  return (
-    <div>
-      <button>go back</button>
-      <h1>Welcome to Tweak</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Mobile Number
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Enter here"
-            required
-          />
-        </label>
+  const handleSubmitOtp = () => {
+    console.log("Entered OTP:",formData);
+    navigate("/");
 
-        <button type="submit">Generate otp</button>
+  };
 
-      </form>
+  const handleOnBackClick=()=>{
+    gotNumber&&setGotNumber(false) //only works when mobile no is submitted
+  }
+
+  return (<>
+    
+      <button onClick={handleOnBackClick} className='back-button'><FaChevronLeft /></button>
+      <div className={styles['flexy-div']}>
+      <h1 className={styles['welcome-txt']}>Welcome to Tweak</h1>
+      {gotNumber ? (
+        <p className={styles['desc-txt']}>
+          Enter the OTP sent to <span className={styles['bold-text']}>{formData.phone}</span>.
+        </p>
+      ) : (
+        <p className={styles['desc-txt']}>
+           We will send you a One Time Password on this mobile number.
+        </p>
+      )}
+      {gotNumber?<OTPInput formData={formData}
+        updateFormData={updateFormData}
+        onSubmit={handleSubmitOtp}/>
+      :<PhoneForm
+        formData={formData}
+        updateFormData={updateFormData}
+        onSubmit={handleSubmitNum}
+      />}
     </div>
-  )
+    </>
+  );
 }
 
-export default SignUp
+export default SignUp;

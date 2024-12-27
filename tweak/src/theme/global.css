@@ -14,7 +14,7 @@
   }
   
   button:hover {
-    background-color: var(--color2);
+    background-color: var(--color3d);
   }
   
   button:disabled {
@@ -22,8 +22,18 @@
     cursor: not-allowed;
   }
 
-  .pill-button{
-    border-radius: 25%;
+  .back-button{
+    border-radius: 10px;
+    background-color: var(--colorbg);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    color: var(--color1);
+    position:relative;
+    left:2%;
+    top:10px;
+  }
+
+  .boxy-btn{
+    border-radius: 10px;
   }
   
   .modal-overlay {
@@ -43,7 +53,7 @@
     background-color: var(--modal-background-color);
     padding: var(--modal-padding);
     border-radius: var(--modal-border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--color2);
     width: 90%;
     max-width: 500px;
   }
