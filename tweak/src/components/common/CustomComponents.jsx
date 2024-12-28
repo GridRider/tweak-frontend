@@ -61,9 +61,9 @@ function CustomComponents() {
         
         placeholder: (base) => ({
           ...base,
-          color: "black",      // Change text color
-          textAlign: "center" // Center-align the text
+          textAlign: "center" 
         }),
+        
       };
       
 

@@ -10,22 +10,27 @@ const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,cust
    const defaultStyles = {
     control: (base, state) => ({
       ...base,
-      borderColor: state.isFocused ? focusBorderColor : base.borderColor, // Focus border color
-      boxShadow: state.isFocused ? `0 0 0 2px ${focusBorderColor}33` : base.boxShadow,
-      "&:hover": {
-        borderColor: focusBorderColor,
-      },
+        borderRadius:"10px",
     }),
     placeholder: (base) => ({
       ...base,
-      color: "#888", // Default placeholder color
+      textAlign: "center"     // Change text color
     }),
+    
   };
 
-  const combinedStyles = (base, state) => ({
-    ...defaultStyles[base]?.(base, state),
-    ...(customStyles?.[base]?.(base, state) || {}),
-  });
+  const combinedStyles = {
+    control: (base, state) => ({
+      ...(defaultStyles.control ? defaultStyles.control(base, state) : base), // Safely apply default styles
+      ...(customStyles.control ? customStyles.control(base, state) : {}), // Override with custom styles
+    }),
+    placeholder: (base) => ({
+      ...(defaultStyles.placeholder ? defaultStyles.placeholder(base) : base), // Safely apply default styles
+      ...(customStyles.placeholder ? customStyles.placeholder(base) : {}), // Override with custom styles
+      color:defaultStyles.placeholder?.color || customStyles.placeholder?.color ||  base.color, // Explicit color override
+    }),
+  
+  };
 
   return (
     <div
@@ -42,7 +47,19 @@ const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,cust
         onChange={onChange}
         value={value}
         classNamePrefix="floating-select"
-        styles={customStyles}
+        styles={combinedStyles}
+        theme={(theme) => ({
+          ...theme,
+          borderRadius: 0,
+          colors: {
+            ...theme.colors,
+            primary: 'var(--color1)',
+            neutral50:"var(--text1)",
+            neutral30:"var(--color1)",
+            neutral40:"var(--color1)"
+            
+          },
+        })}
       />
     </div>
   );
