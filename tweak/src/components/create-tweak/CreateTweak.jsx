@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import FloatingLabelField from "../common/FloatingLabelField"
+import Select from 'react-select'
 
 function CreateTweak() {
     const [formData, setFormData] = useState({
@@ -61,36 +63,57 @@ function CreateTweak() {
         console.log("Form data to send to API:", formData);
         alert("Form submitted successfully!");
       };
+
+      //NEW
+      const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value, // Dynamically update the corresponding field
+        }));
+      };
+
+      const options = [
+        { value: '1', label: 'IT' },
+        { value: '2', label: 'Design' },
+        { value: '3', label: 'Marketing' }
+      ]
+
+      const customStyles = {
+        
+        placeholder: (base) => ({
+          ...base,
+          color: "black",      // Change text color
+          textAlign: "center" // Center-align the text
+        }),
+      };
+
+    
+
     
       return (
         <div style={{ margin: "50px auto", maxWidth: "600px", textAlign: "center" }}>
           <h2>Job Form</h2>
           <form
             onSubmit={handleSubmit}
-            style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+            style={{ display: "flex", flexDirection: "column", gap: "1rem",alignItems: "center" }}
           >
             {/* Title */}
-            <label>
-              Title:
-              <input
-                type="text"
-                name="taskTitle"
-                value={formData.taskTitle}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <FloatingLabelField
+              label="Title"
+              name="taskTitle" // Unique name for this field
+              value={formData.taskTitle}
+              onChange={handleInputChange}
+      />
     
             {/* Description */}
-            <label>
-              Description:
-              <textarea
-                name="taskDescription"
-                value={formData.taskDescription}
-                onChange={handleChange}
-                required
-              />
-            </label>
+            <FloatingLabelField
+              label="Description"
+              name="taskDescription" // Unique name for this field
+              value={formData.taskDescription}
+              multiline={true}
+              onChange={handleInputChange}
+      />
     
             {/* Remote or Onsite Toggle */}
             <label>
@@ -125,6 +148,12 @@ function CreateTweak() {
                 <option value="3">Marketing</option>
               </select>
             </label>
+            <div style={{width:"80%"}}>
+              <label htmlFor="">Category</label>
+            <Select options={options} placeholder="Select a category" styles={customStyles}/>
+            </div>
+            
+           
     
             {/* Pricing Type */}
             <label>

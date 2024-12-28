@@ -1,0 +1,25 @@
+.floating-label-container {
+    position: relative;
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .floating-label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    pointer-events: none; /* Prevent label clicks */
+  }
+  
+  .floating-label-container.focused .floating-label,
+  .floating-label-container .floating-select__control--is-focused + .floating-label,
+  .floating-label-container .floating-select__value-container.has-value + .floating-label {
+    top: -10px;
+    font-size: 12px;
+    color:var(--color1);
+  }
+  

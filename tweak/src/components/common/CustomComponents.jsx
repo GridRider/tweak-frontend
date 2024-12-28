@@ -2,6 +2,7 @@ import React from 'react'
 import ProgressButton from './ProgressButton';
 import { useState } from 'react';
 import FloatingLabelField from './FloatingLabelField';
+import FloatingLabelSelect from './FloatingLabelSelect';
 
 function CustomComponents() {
     //FOR PROGRESS BUTTON
@@ -48,6 +49,24 @@ function CustomComponents() {
         alert("Form submitted!");
       };
 
+      //FOR FLOATING LABEL SELECT
+      const options = [
+        { value: "option1", label: "Option 1" },
+        { value: "option2", label: "Option 2" },
+      ];
+
+      const [selectedOption, setSelectedOption] = useState(null);
+
+      const customStyles = {
+        
+        placeholder: (base) => ({
+          ...base,
+          color: "black",      // Change text color
+          textAlign: "center" // Center-align the text
+        }),
+      };
+      
+
   return (
     <div>
         <h1>This page contains the doumentation of the custom components created.</h1>
@@ -84,6 +103,16 @@ function CustomComponents() {
       <button onClick={handleSubmit} style={{ marginTop: "20px" }}>
         Submit
       </button>
+      <h2>Floating label select</h2>
+
+      <FloatingLabelSelect
+        placeholder="hello"
+        label="Choose an option"
+        options={options}
+        value={selectedOption}
+        onChange={setSelectedOption}
+        customStyles={customStyles}
+      />
     </div>
 
       
