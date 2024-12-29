@@ -3,7 +3,7 @@ import Select from "react-select";
 import PropTypes from "prop-types"; // For type-checking props
 import "./FloatingLabelSelect.css"; // Custom CSS
 
-const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,customStyles }) => {
+const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,customStyles,isMulti=false }) => {
   const [isFocused, setIsFocused] = useState(false);
 
    // Default styles for the select component
@@ -11,31 +11,33 @@ const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,cust
     control: (base, state) => ({
       ...base,
         borderRadius:"10px",
+        
     }),
     placeholder: (base) => ({
       ...base,
       textAlign: "center"     // Change text color
     }),
     
+    
   };
 
   const combinedStyles = {
     control: (base, state) => ({
-      ...(defaultStyles.control ? defaultStyles.control(base, state) : base), // Safely apply default styles
-      ...(customStyles.control ? customStyles.control(base, state) : {}), // Override with custom styles
+      ...(defaultStyles?.control ? defaultStyles.control(base, state) : base), // Safely apply default styles
+      ...(customStyles?.control ? customStyles.control(base, state) : {}), // Safely apply custom styles
     }),
     placeholder: (base) => ({
-      ...(defaultStyles.placeholder ? defaultStyles.placeholder(base) : base), // Safely apply default styles
-      ...(customStyles.placeholder ? customStyles.placeholder(base) : {}), // Override with custom styles
-      color:defaultStyles.placeholder?.color || customStyles.placeholder?.color ||  base.color, // Explicit color override
+      ...(defaultStyles?.placeholder ? defaultStyles.placeholder(base) : base), // Safely apply default styles
+      ...(customStyles?.placeholder ? customStyles.placeholder(base) : {}), // Safely apply custom styles
+      color: customStyles?.placeholder?.color || defaultStyles?.placeholder?.color || base.color, // Explicit color override
     }),
-  
   };
+  
 
   return (
     <div
       className={`floating-label-container ${
-        isFocused || value ? "focused" : ""
+        (isFocused || value) && value.length!=0? "focused" : ""
       }`}
     >
       <label className="floating-label">{label}</label>
@@ -46,6 +48,7 @@ const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,cust
         onBlur={() => setIsFocused(false)}
         onChange={onChange}
         value={value}
+        isMulti={isMulti}
         classNamePrefix="floating-select"
         styles={combinedStyles}
         theme={(theme) => ({

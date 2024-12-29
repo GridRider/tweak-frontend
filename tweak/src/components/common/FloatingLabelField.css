@@ -1,7 +1,12 @@
 .floating-label-field {
     position: relative;
-    margin: 1em 0;
     width:80%;
+    margin: 10px 0px;
+  }
+
+  .floating-label-date-field {
+    position: relative;
+    width:100%;
   }
   
   .floating-label {
@@ -13,6 +18,7 @@
     color:var(--text3);
     pointer-events: none;
     transition: all 0.2s ease;
+    
   }
   
   .floating-label.active {
@@ -24,12 +30,13 @@
     padding:.4px;
     border-radius: 10px;
     text-shadow: 2px 2px 8px  var(--color-shadow);
+    z-index: 2;
 
   }
   
   .floating-input {
     width:100%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0px 10px 0px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -37,6 +44,12 @@
     font-size: .90rem; 
     line-height: 1.5; 
     text-indent: 15px;  
+  }
+  .floating-input:focus{
+    background-color: transparent;
+    border-color: var(--color1);
+    box-shadow: 0 0 8px  var(--color-shadow);
+    outline:none;
   }
   
   
