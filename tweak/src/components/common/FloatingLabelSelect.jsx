@@ -17,6 +17,14 @@ const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,cust
       ...base,
       textAlign: "center"     // Change text color
     }),
+    menu: (base) => ({
+      ...base,
+      zIndex: 9999, // z-index for dropdown when not portaled
+    }),
+    menuPortal: (base) => ({
+      ...base,
+      zIndex: 9999, // z-index for portaled dropdown
+    }),
     
     
   };
@@ -51,6 +59,7 @@ const FloatingLabelSelect = ({ label, options, onChange, value, placeholder,cust
         isMulti={isMulti}
         classNamePrefix="floating-select"
         styles={combinedStyles}
+        menuPortalTarget={document.body}
         theme={(theme) => ({
           ...theme,
           borderRadius: 0,
