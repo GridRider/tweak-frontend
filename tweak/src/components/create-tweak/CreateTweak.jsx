@@ -117,8 +117,8 @@ function CreateTweak() {
 
 
   return (
-    <div style={{ margin: "50px auto", maxWidth: "600px", textAlign: "center" }}>
-      <h2>Job Form</h2>
+    <div style={{ margin: "0px auto", maxWidth: "600px", textAlign: "center" }}>
+      <h2 className={styles["header"]}>Create Tweak</h2>
       <form
         onSubmit={handleSubmit}
         style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}
@@ -181,20 +181,6 @@ function CreateTweak() {
           />
         </div>
 
-
-        {/* Amount */}
-        {/* <label>
-              Amount:
-              <input
-                type="number"
-                name="amount"
-                value={formData.amount}
-                onChange={handleChange}
-                placeholder="Enter amount"
-                required
-              />
-            </label> */}
-
         <FloatingLabelField
           label="Amount"
           type="number"
@@ -238,23 +224,6 @@ function CreateTweak() {
             placeholder="Closing Date" />
         </div>
         
-
-        {/* Skills Required */}
-        {/* <label>
-              Skills Required:
-              <select
-                name="skills"
-                multiple
-                value={formData.skills}
-                onChange={handleSkillsChange}
-              >
-                <option value="1">React</option>
-                <option value="2">JavaScript</option>
-                <option value="3">CSS</option>
-              </select>
-            </label> */}
-
-
 
         <div className={styles["toggle-btns-container"]}>
           <div className={styles["each-btn-container"]}>
