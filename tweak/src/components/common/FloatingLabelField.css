@@ -1,6 +1,12 @@
 .floating-label-field {
     position: relative;
-    margin: 1em 0;
+    width:80%;
+    margin: 10px 0px;
+  }
+
+  .floating-label-date-field {
+    position: relative;
+    width:100%;
   }
   
   .floating-label {
@@ -9,28 +15,41 @@
     left: 20px;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: #000000;
+    color:var(--text3);
     pointer-events: none;
     transition: all 0.2s ease;
+    
   }
   
   .floating-label.active {
-    top: 25%;
-    font-size: 0.60rem;
-    color: #000000;
+    top: 0%;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--color1);
+    background-color: white;
+    padding:.4px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 8px  var(--color-shadow);
+    z-index: 2;
+
   }
   
   .floating-input {
-    width: 20%;
-    padding: 10px 10px 10px 10px;
+    width:100%;
+    padding: 10px 0px 10px 0px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 10px;
     outline: none;
-    padding: 15px 10px 10px 10px; 
     font-size: .90rem; 
     line-height: 1.5; 
     text-indent: 15px;  
+  }
+  .floating-input:focus{
+    background-color: transparent;
+    border-color: var(--color1);
+    box-shadow: 0 0 8px  var(--color-shadow);
+    outline:none;
   }
   
   

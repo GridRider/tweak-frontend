@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./FloatingLabelField.css";
 
-const FloatingLabelField = ({ label, type = "text", value, onChange,name }) => {
+const FloatingLabelField = ({ label, type = "text", value, onChange,name,multiline = false,
+  rows = 3, }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => setIsFocused(true);
@@ -18,15 +19,27 @@ const FloatingLabelField = ({ label, type = "text", value, onChange,name }) => {
       >
         {label}
       </label>
-      <input
-        type={type}
-        value={value}
-        onFocus={handleFocus}
-        name={name}
-        onBlur={handleBlur}
-        onChange={onChange}
-        className="floating-input"
-      />
+      {multiline ? (
+        <textarea
+          name={name}
+          rows={rows}
+          value={value}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onChange={onChange}
+          className="floating-input"
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          value={value}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onChange={onChange}
+          className="floating-input"
+        />
+      )}
     </div>
   );
 };

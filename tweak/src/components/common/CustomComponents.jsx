@@ -1,94 +1,92 @@
-import React from 'react'
-import ProgressButton from './ProgressButton';
-import { useState } from 'react';
-import FloatingLabelField from './FloatingLabelField';
+import React, { useState } from "react";
+import ProgressButton from "./ProgressButton";
+import FloatingLabelField from "./FloatingLabelField";
+import FloatingLabelSelect from "./FloatingLabelSelect";
+import CustomDatePicker from "./CustomDatePicker";
 
 function CustomComponents() {
-    //FOR PROGRESS BUTTON
-    const fakeApiCall = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            // Simulate API response
-            const success = Math.random() > 0.5; // 50% chance of success
-            if (success) {
-              resolve({ status: "success" });
-            } else {
-              resolve({ status: "failed" });
-            }
-          }, 2000);
-        });
-      };
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    taskDate: null,
+  });
 
-      //FOR FLOATING LABEL
-      const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-      });
-    
-      const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setFormData((prevData) => ({
-          ...prevData,
-          [name]: value, // Dynamically update the corresponding field
-        }));
-      };
-    
-      const handleSubmit = () => {
-        const data = new FormData();
-        Object.entries(formData).forEach(([key, value]) => {
-          data.append(key, value);
-        });
-    
-        // Log FormData contents for demonstration
-        for (let [key, value] of data.entries()) {
-          console.log(`${key}: ${value}`);
-        }
-    
-        alert("Form submitted!");
-      };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    alert("Form submitted!");
+    console.log("Form Data: ", formData);
+  };
+
+  const options = [
+    { value: "option1", label: "Option 1" },
+    { value: "option2", label: "Option 2" },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState(null);
 
   return (
     <div>
-        <h1>This page contains the doumentation of the custom components created.</h1>
+      <h1>This page contains the documentation of the custom components created.</h1>
 
-        <h2>Custom progress button</h2>
-        Demo:<ProgressButton onClick={fakeApiCall} >Hi</ProgressButton>
+      <h2>Custom Progress Button</h2>
+      <ProgressButton onClick={() => console.log("API Call Triggered")}>
+        Click Me
+      </ProgressButton>
 
-        <h2>Custom Floating label input</h2>
-        Demo:
-            <div style={{ padding: "20px" }}>
-      <h2>Floating Label Form</h2>
+      <h2>Custom Floating Label Input</h2>
+      <div style={{ padding: "20px" }}>
+        <FloatingLabelField
+          label="First Name"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleInputChange}
+        />
 
-      <FloatingLabelField
-        label="First Name"
-        name="firstName" // Unique name for this field
-        value={formData.firstName}
-        onChange={handleInputChange}
+        <FloatingLabelField
+          label="Last Name"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleInputChange}
+        />
+
+        <FloatingLabelField
+          label="Email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+
+        <button onClick={handleSubmit} style={{ marginTop: "20px" }}>
+          Submit
+        </button>
+      </div>
+
+      <h2>Floating Label Select</h2>
+      <FloatingLabelSelect
+        placeholder="hello"
+        label="Choose an option"
+        options={options}
+        value={selectedOption}
+        onChange={setSelectedOption}
       />
 
-      <FloatingLabelField
-        label="Last Name"
-        name="lastName" // Unique name for this field
-        value={formData.lastName}
-        onChange={handleInputChange}
+      <h2>Custom Date Picker</h2>
+      <CustomDatePicker
+        label="Task Date"
+        value={formData.taskDate}
+        onChange={(date) => setFormData({ ...formData, taskDate: date })}
+        placeholder="Select a work date"
       />
-
-      <FloatingLabelField
-        label="Email"
-        name="email" // Unique name for this field
-        value={formData.email}
-        onChange={handleInputChange}
-      />
-
-      <button onClick={handleSubmit} style={{ marginTop: "20px" }}>
-        Submit
-      </button>
     </div>
-
-      
-    </div>
-  )
+  );
 }
 
-export default CustomComponents
+export default CustomComponents;

@@ -1,0 +1,23 @@
+.toggle-label{
+    font-size: small;
+    color:var(--text3)
+}
+.toggle-btns-container{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+    /* Note have to add breakpoint at 370px and change flex-direction to column 
+    ALSO : Try using date range portal*/
+
+}
+.each-btn-container{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    width:125px;
+}
+@media (max-width: 416px) {
+    .toggle-btns-container{
+        flex-direction: column;
+    }
+  }
