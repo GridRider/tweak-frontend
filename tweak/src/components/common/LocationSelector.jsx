@@ -10,10 +10,11 @@ const center = {
   lat: 37.7749, // Default latitude (San Francisco)
   lng: -122.4194, // Default longitude
 };
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function LocationSelector() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDNqLMHw45v31kl-2zGXAMHI9WZyyFePd8", // Replace with your API key
+    googleMapsApiKey: apiKey, // Replace with your API key
     libraries,
   });
 
@@ -23,7 +24,7 @@ function LocationSelector() {
 
   // Function to fetch address using reverse geocoding
   const fetchAddress = async (lat, lng) => {
-    const apiKey = "AIzaSyDNqLMHw45v31kl-2zGXAMHI9WZyyFePd8"; // Replace with your API key
+    const apiKey = apiKey; // Replace with your API key
     const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`;
 
     try {
