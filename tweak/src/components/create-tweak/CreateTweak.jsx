@@ -7,6 +7,10 @@ import styles from "./CreateTweak.module.css"
 import "../common/CustomDatePicker.css"
 import CustomDatePicker from "../common/CustomDatePicker";
 import { formatTime } from "../common/formatTime";
+import LocationSelector from "../common/LocationSelector";
+import CustomModal from "../common/CustomModal";
+import { FaMapMarkerAlt } from "react-icons/fa";
+
 
 function CreateTweak() {
   const [formData, setFormData] = useState({
@@ -110,6 +114,12 @@ function CreateTweak() {
     { value: '2', label: 'Per Unit' },
     { value: '3', label: 'Per Km' }
   ]
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+    const handleOkClick=()=>{alert("location accepted"); closeModal()}
 
 
 
@@ -270,6 +280,7 @@ function CreateTweak() {
 
           </div>
 
+
           {/* Remote or Onsite Toggle */}
           <div className={styles["each-btn-container"]}>
             <label className={styles["toggle-label"]}>
@@ -292,7 +303,24 @@ function CreateTweak() {
             </button>
           </div>
 
+          
+
         </div>
+        <div className={styles["location-container"]}>
+        <label className={styles["toggle-label"]}>
+              Add Location
+            </label>
+      <button className={styles["location-btn"]} type="button" onClick={openModal}><FaMapMarkerAlt/></button>
+
+      <CustomModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="Select your Location:"
+      >
+        <LocationSelector />
+        <button onClick={handleOkClick}>OK</button>
+      </CustomModal>
+    </div>
 
 
 

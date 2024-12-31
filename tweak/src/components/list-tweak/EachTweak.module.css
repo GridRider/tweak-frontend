@@ -1,0 +1,133 @@
+/* EachTweak.module.css */
+
+.card {
+    position:relative;
+    border: 1px solid #e9e9e9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin:10px 10px 16px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image {
+    border-radius: 25%;
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    
+  }
+
+  .tag{
+    position:absolute;
+    top:0px;
+    right:5px;
+    padding:7px;
+    font-size: .6rem;
+    border-radius: 10px 0px 10px 0px;
+    border:2px solid var(--color1);
+    width:fit-content;
+    height:fit-content;
+    font-weight: bold;
+  }
+  
+  .content {
+    padding: 10px 16px 5px 16px;
+    flex: 1;
+  }
+  
+  .title {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: bold;
+    
+  }
+  
+  .amount {
+    margin: 0 0 8px;
+    color: var(--color4);
+    font-size: .8rem;
+  }
+  
+  .text {
+    margin:0px;
+    color: #555;
+  }
+  
+  .icon {
+    color: #ffffff;
+  }
+  .work-mode-remote{
+    background-color: var(--color1);
+    padding:7px;
+    border-radius: 10px;
+    color:var(--text2);
+    font-size: .6rem;
+    font-weight: bold;
+    width:fit-content;
+    height:fit-content;
+    margin:0px;
+  }
+  .work-mode-on-site{
+    background-color: var(--color2);
+    padding:7px;
+    border-radius: 10px;
+    color:var(--text2);
+    font-size: .6rem;
+    width:fit-content;
+    height:fit-content;
+    margin:0px;
+    font-weight: bold;
+  }
+  .inner-div-1{
+    display: flex;
+    column-gap: 15px;
+    align-items:baseline;
+    flex-wrap: wrap
+  }
+
+  .experienced{
+    background-color:red;
+    padding:7px;
+    border-radius: 10px;
+    color:var(--text2);
+    font-size: .6rem;
+    width:fit-content;
+    height:fit-content;
+    margin:0px;
+    font-weight: bold;
+  }
+  .verified{
+    background-color:var(--colors);
+    padding:7px;
+    border-radius: 10px;
+    color:var(--text2);
+    font-size: .6rem;
+    width:fit-content;
+    height:fit-content;
+    margin:0px;
+    font-weight: bold;
+  }
+
+  .location{
+    font-size: .8rem;
+    margin:0px;
+}
+.inner-div-last{
+  padding: 0px 10px;
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    align-content: space-around;
+}
+.line{
+  margin: 10px 0px 0px 0px;
+}
+
+.date{
+  font-size: .8rem;;
+}
+/* .box-container{
+  display: flex;
+} */

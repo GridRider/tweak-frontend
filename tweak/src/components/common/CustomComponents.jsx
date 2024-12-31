@@ -3,6 +3,8 @@ import ProgressButton from "./ProgressButton";
 import FloatingLabelField from "./FloatingLabelField";
 import FloatingLabelSelect from "./FloatingLabelSelect";
 import CustomDatePicker from "./CustomDatePicker";
+import LocationSelector from "./LocationSelector";
+import CustomModal from "./CustomModal";
 
 function CustomComponents() {
   const [formData, setFormData] = useState({
@@ -31,6 +33,13 @@ function CustomComponents() {
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
+
+  //Custom Modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+  const handleOkClick=()=>{alert("location accepted"); closeModal()}
 
   return (
     <div>
@@ -85,7 +94,44 @@ function CustomComponents() {
         onChange={(date) => setFormData({ ...formData, taskDate: date })}
         placeholder="Select a work date"
       />
+
+<div>
+      <h1>Custom Modal Demo</h1>
+      <button onClick={openModal}>Open Modal</button>
+
+      <CustomModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="My Custom Modal"
+      >
+        
+        <p>This is a reusable modal component.</p>
+        <button onClick={closeModal}>Close</button>
+      </CustomModal>
     </div>
+
+      <h2>Location selector</h2>
+      <LocationSelector />
+
+      
+<div>
+      <h1>Custom Modal with location Demo</h1>
+      <button onClick={openModal}>Open Modal</button>
+
+      <CustomModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="Select your Location:"
+      >
+        <LocationSelector />
+        <button onClick={handleOkClick}>OK</button>
+      </CustomModal>
+    </div>
+    </div>
+
+    
+
+
   );
 }
 
