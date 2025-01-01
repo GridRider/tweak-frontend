@@ -1,16 +1,20 @@
 :root {
     /* Colors */
-    --color1: #3F41D9;
-    --color2: #6F3FD9;
-    --color3d:#a8b9da;
-    --color4:#3FA3D9;
-    --color5:#A13FD9;
-    --color6:#EDF7F6;
+    /* --color1: #3F41D9; */
+    --color1:black;
+    --color2: #3A3A3A;
+    --color3d:#585858;
+    /* --color3d:#a8b9da; */
+
+    --color4:#757575;
+    --color5:#929292;
+    --color6:#CDCDCD;
     --color7:#ffc107;
     --colorbg:white;
     --colors: #28a745;
     --colord: #dc3545;
-    --color-shadow:rgba(0, 123, 255, 0.3);
+    /* --color-shadow:rgba(0, 123, 255, 0.3); */
+    --color-shadow:rgba(60, 64, 69, 0.3);
     --text1:black;
     --text2:white;
     --text3:grey;
