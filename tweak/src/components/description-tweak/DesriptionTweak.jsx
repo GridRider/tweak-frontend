@@ -1,5 +1,6 @@
-import React from "react";
+import React , {useState} from "react";
 import Description from "./Description";
+import { FaBookmark} from "react-icons/fa";
 
 const DescriptionTweak = () => {
   const jobDetails = {
@@ -17,12 +18,23 @@ const DescriptionTweak = () => {
     experienceRequired: true,
     verificationRequired: false,
   };
+  const [hasApplied,setHasApplied]=useState(false);
+  const [hasWatchlisted,setHasWatchlisted]=useState(false);
+  const handleApply =()=>{
+    setHasApplied(true)
+  }
+  const handleWatchlistClick=()=>{
+    setHasWatchlisted(!hasWatchlisted)
+  }
 
   return (
     <Description
       {...jobDetails}
+      hasApplied={hasApplied}
       onAddToWatchlist={() => alert("Added to Watchlist")}
-      onApply={() => alert("Applied")}
+      onWatchlistClick={handleWatchlistClick}
+      hasWatchlisted={hasWatchlisted}
+      onApply={handleApply}
       onRemoveApplication={() => alert("Application Removed")}
       onViewApplicants={() => alert("10 Applicants")}
     />
