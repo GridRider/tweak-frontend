@@ -1,5 +1,5 @@
 import React from "react";
-import "./JobDetailsPage.css";
+import "./Description.css";
 
 const Description
  = ({

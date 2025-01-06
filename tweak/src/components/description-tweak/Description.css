@@ -61,6 +61,16 @@ body {
   }
   
   .actions button {
+    
+    border-radius: 10px;
+    
+  }
+  
+  .actions button:hover {
+    background-color: #242527;
+  }
+  
+  /* .actions button {
     padding: 12px;
     font-size: 1rem;
     color: #fff;
@@ -73,7 +83,7 @@ body {
   
   .actions button:hover {
     background-color: #0056b3;
-  }
+  } */
   
   @media (min-width: 768px) {
     .actions {
