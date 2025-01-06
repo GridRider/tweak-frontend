@@ -1,22 +1,27 @@
 import React from "react";
-import "./ApplicantCard.css";
+import styles from "./ApplicantCard.module.css";
 
 const ApplicantCard = ({ name, profilePicture, experience, onAccept, onReject }) => {
   return (
-    <div className="applicant-card">
-      <img src={profilePicture} alt={name} className="profile-picture" />
-      <div className="card-details">
-        <h3 className="name">{name}</h3>
-        <p className="experience">Experience: {experience}</p>
+    <div className={styles["applicant-card"]}>
+      <div className={styles["flexy-div-1"]}>
+      <img src={profilePicture} alt={name} className={styles["profile-picture"]} />
+      <div className={styles["card-details"]}>
+        <h3 className={styles["name"]}>{name}</h3>
+        {experience&&
+        <p className={styles["experience"]}>Experienced</p>
+      }
       </div>
-      <div className="card-actions">
-        <button className="accept-btn" onClick={onAccept}>
+      <div className={styles["card-actions"]}>
+        <button className={styles["accept-btn"]} onClick={onAccept}>
           Accept
         </button>
-        <button className="reject-btn" onClick={onReject}>
+        <button className={styles["reject-btn"]} onClick={onReject}>
           Reject
         </button>
       </div>
+      </div>
+      
     </div>
   );
 };

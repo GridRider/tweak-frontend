@@ -1,5 +1,6 @@
 import React from "react";
 import ApplicantCard from "./ApplicantCard";
+import styles from "./ApplicantCard.module.css"
 
 const ApplicantList = () => {
   const applicants = [
@@ -7,19 +8,19 @@ const ApplicantList = () => {
       id: 1,
       name: "Alice Johnson",
       profilePicture: "https://via.placeholder.com/50",
-      experience: "5 years",
+      experience: true,
     },
     {
       id: 2,
       name: "Bob Smith",
       profilePicture: "https://via.placeholder.com/50",
-      experience: "3 years",
+      experience: false
     },
     {
       id: 3,
       name: "Carol Davis",
       profilePicture: "https://via.placeholder.com/50",
-      experience: "2 years",
+      experience: true,
     },
   ];
 
@@ -31,8 +32,11 @@ const ApplicantList = () => {
     alert(`${name} rejected!`);
   };
 
-  return (
-    <div style={{ padding: "16px" }}>
+  return (<>
+        <h2 className={styles["header"]}>Create Tweak</h2>
+    <div className={styles["main-container"]}>
+            
+      
       {applicants.map((applicant) => (
         <ApplicantCard
           key={applicant.id}
@@ -44,6 +48,7 @@ const ApplicantList = () => {
         />
       ))}
     </div>
+    </>
   );
 };
 
