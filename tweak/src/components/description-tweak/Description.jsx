@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import styles from "./Description.module.css";
 import { FaBookmark, FaRegBookmark, FaPlay, FaPause,FaVolumeUp } from "react-icons/fa";
 import wiggleAudio from "../../assets/wiggle.mp3";
+import styles2 from "../list-tweak/EachTweak.module.css"
 
 const Description = ({
   title,
@@ -38,13 +39,7 @@ const Description = ({
     <>
       <div className={styles["top-div"]}>
         <header className={styles["header-2"]}>
-          <div className={styles["watchlist"]}>
-            {hasWatchlisted ? (
-              <FaBookmark onClick={onWatchlistClick} />
-            ) : (
-              <FaRegBookmark onClick={onWatchlistClick} />
-            )}
-          </div>
+          
           <h1>{title}</h1>
           <p className={styles.category}>{category}</p>
         </header>
@@ -62,15 +57,33 @@ const Description = ({
         
 
         <section className={styles.details}>
-          <div className={styles.detail}>
-            <strong>Remote or On-site:</strong> {isRemote ? "Remote" : "On-site"}
+        <div className={`${styles2['inner-div-1']} ${styles['inner-div-1-new']}`}>
+            <p >
+              {isRemote ? (
+                <p className={`${styles2['work-mode-remote']}`}>
+                  Remote
+                </p>
+              ) : (
+                <p className={`${styles2['work-mode-on-site']} `}>
+                  On-Site
+                </p>
+              )}
+            </p>
+            {experienceRequired && (
+              <p className={`${styles2['experienced']}`}>Experienced Only</p>
+            )}
+            {verificationRequired && (
+              <p className={`${styles2['verified']}`}>Verified Only</p>
+            )}
           </div>
+          <div className={styles['detail-amount']}>
+            {amount} {pricingType}
+          </div>
+          
           <div className={styles.detail}>
             <strong>Skills Required:</strong> {skills.join(", ")}
           </div>
-          <div className={styles.detail}>
-            <strong>Amount:</strong> {amount} ({pricingType})
-          </div>
+          
           <div className={styles.detail}>
             <strong>Date and Time:</strong> {dateTime}
           </div>
@@ -80,15 +93,16 @@ const Description = ({
           <div className={styles.detail}>
             <strong>Closing Date:</strong> {closingDate}
           </div>
-          <div className={styles.detail}>
-            <strong>Experience Required:</strong> {experienceRequired ? "Yes" : "No"}
-          </div>
-          <div className={styles.detail}>
-            <strong>Verification Required:</strong> {verificationRequired ? "Yes" : "No"}
-          </div>
-          <p>30 People have already applied</p>
+          <p style={{fontWeight:"bold"}}><span style={{color:"red"}}>30 People </span>have already applied</p>
         </section>
         <footer className={styles.actions}>
+        <div className={styles["watchlist"]}>
+            {hasWatchlisted ? (
+              <FaBookmark onClick={onWatchlistClick} />
+            ) : (
+              <FaRegBookmark onClick={onWatchlistClick} />
+            )}
+          </div>
           {!hasApplied ? (
             <button onClick={onApply}>Apply</button>
           ) : (
