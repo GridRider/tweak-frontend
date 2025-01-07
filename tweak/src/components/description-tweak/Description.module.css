@@ -6,7 +6,7 @@ body {
 .top-div {
   background-color: black;
   padding: 15px;
-  border-radius: 0px 0px 50px 50px;
+ 
 
 }
 
@@ -61,6 +61,10 @@ body {
   color: #f0eaea;
   text-align: center;
 }
+.audio{
+  display:flex;
+    justify-content: center;
+}
 
 .details {
   margin-top: 16px;
@@ -106,6 +110,30 @@ body {
   .actions button:hover {
     background-color: #0056b3;
   } */
+
+  .audio-control {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 10px 0;
+    border: 2px solid black;
+  }
+  
+  .audio-control:hover {
+    background-color: var(--color3);
+  }
+  
+  .audio-icon{
+    width:1rem;
+  }
+  
 
 @media (min-width: 768px) {
   .actions {
